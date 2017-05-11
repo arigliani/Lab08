@@ -12,7 +12,15 @@ public class TestDAO {
 		BordersDAO dao = new BordersDAO();
 
 		System.out.println("Lista di tutte le nazioni:");
-		List<Country> countries = dao.loadAllCountries();
+		System.out.println(dao.loadAllCountries());
+		
+		System.out.println("Lista confini anno 1990: ");
+		System.out.println(dao.getCountryPairs(1990));
+		
+		
+		System.out.println("confini un paese nel 2000 ");
+		Country c= dao.loadAllCountries().get(1);
+		System.out.println(dao.listAdiacenti(c,2000));
 
 	}
 }
